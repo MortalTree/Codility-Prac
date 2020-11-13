@@ -12,7 +12,8 @@ let solution = function (A, K) {
         // calculate slice point
         K = (A.length - (K % A.length))
         console.log(K)
-        return [...A.slice(K), ...A.slice(0, K)]        
+        // return [...A.slice(K), ...A.slice(0, K)]        
+        return [A.slice(K), A.slice(0, K)]        
     }
 }
 
