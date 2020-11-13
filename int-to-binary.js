@@ -1,37 +1,39 @@
 // function to convert the integer to a binary string
-let binVal = function (input) {
-    // initialise an empty array
-    let output = []
-    // initialise an emptry string
-    let binString = ''
-    // keep track of original input
-    let initialNumber = input
+// let binVal = function (input) {
+//     // initialise an empty array
+//     let output = []
+//     // initialise an emptry string
+//     let binString = ''
+//     // keep track of original input
+//     let initialNumber = input
 
-    // loop while integer > 1
-    while (input > 1) {
-        // add the mod remainder to the array
-        output.push(Math.floor(input % 2))
-        // divide integer by 2 for next mod
-        input /= 2
-    }
+//     // loop while integer > 1
+//     while (input > 1) {
+//         // add the mod remainder to the array
+//         output.push(Math.floor(input % 2))
+//         // divide integer by 2 for next mod
+//         input /= 2
+//     }
 
-    // reverse the array - binary number is represented from the '1' field in the number
-    let outputRev = output.reverse()
+//     // reverse the array - binary number is represented from the '1' field in the number
+//     let outputRev = output.reverse()
     
-    // loop through the reversed array, and build a string
-    for (let arrCnt = 0; arrCnt <= output.length - 1; arrCnt ++) {
-        binString = binString.concat(outputRev[arrCnt])
-    }
+//     // loop through the reversed array, and build a string
+//     for (let arrCnt = 0; arrCnt <= output.length - 1; arrCnt ++) {
+//         binString = binString.concat(outputRev[arrCnt])
+//     }
 
-    // return `${initialNumber} represented in binary is ${binString}`  
-    return binString
-}
+//     // return `${initialNumber} represented in binary is ${binString}`  
+//     return binString
+// }
 
 // function to count the binary gap of an integer
 
 let binGap = function (number) {
     // first convert the number to binary
-    let useNumber = binVal(number)
+    // let useNumber = binVal(number) - this function can be replaced by:    
+    const useNumber = number.toString(2)
+
     console.log(useNumber)   
     let binCounter = 0
     let maxBin = 0
