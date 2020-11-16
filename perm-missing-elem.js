@@ -3,59 +3,42 @@
 // which means exactly one element is missing
 
 
-// function to check for duplicates in the array
-let checks = function (arr) {
-    let result = false    
-    let count2 = 0
-
-    for (count = 0; count < arr.length; count ++) {
-        // Duplicates in the array                 
-        if (arr[count] == arr[count + 1]) {            
-            result = true
-        }
-        
-        // Integer range
-        if (arr[count] > arr.length + 1) {        
-            result = true
-        }
-    }
-
-    // Array range
-    if (result = false) {
-        if (arr.length >= 0 && arr.length <= 100000) {
-            result = true
-        }
-    }
-
-    return result
-}
-
-let solution = function (A) {
-    A.sort()    
-    let valid = checks(A)
+// GROSS
+// let solution = function (A) {
+//     A.sort()    
     
-    // check for duplicates
-    if (valid == false) {
-        let result 
-        let missing = null
-        for (count = 0; count < A.length - 1; count ++) {
-            result = A[count] + 1
+//     let result 
+//     let missing
 
-            if (A[count + 1] != result) {                
-                missing = result
-                break
-            }
-        }   
+//     if (A[0] !== 1) {
+//         return 1
+//     }
+    
+//     for (count = 0; count < A.length - 1; count ++) {        
+//         result = A[count] + 1
+        
+//         if (A[count + 1] != result) {                
+//             missing = result
+//             return missing  
+//         }
+//     }   
+    
+//     // return missing    
+// }
 
-        if (missing != null) {                
-            return `The missing element is ${missing}`
-        }  else {
-             return 'There is no missing value'
-         }                 
-    } else {
-        return 'Invalid parameter'
-    }    
+// console.log(solution([1, 5, 2, 3, 9, 8, 7, 6]))
+// console.log(solution([]))
+
+function solution(A) {
+    // write your code in JavaScript (Node.js 4.0.0)
+    var size = A.length;
+    var sum = (size + 1) * (size + 2) / 2;
+    console.log(sum);
+    for (i = 0; i < size; i++) {
+        sum -= A[i];
+        console.log(sum);
+    }
+    return sum;
 }
 
-console.log(solution([4, 5, 2, 3, 9, 8, 7, 6]))
-console.log(solution([9, 3, 9, 3, 9, 7, 9]))
+console.log(solution([1, 5, 2, 3, 9, 8, 7, 6]))

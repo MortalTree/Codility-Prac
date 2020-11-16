@@ -39,34 +39,25 @@
 // N is an integer within the range [2..100,000];
 // each element of array A is an integer within the range [−1,000..1,000].
 
-let solution = function(A) {
+function solution(A) {
     let P = 0
     let arr3 = []
-    
-    // this is a fat arrow reducer function - performs the same as having a function
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    
+
+    // fat arrow function to handle the reduction
+    // const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    const reducer = (a, c) => a + c;
+
     for (i = 0; i < A.length -1; i ++) {
         P ++
-        
+
+        // split array1 from the start to P
         let arr1 = A.slice(0, P)
+        // split array 2 from P to the end
         let arr2 = A.slice(P)
         
-        // sum val of arr1
-        // let val1 = arr1.reduce(function(accumulator, currentValue) {
-        //     return accumulator + currentValue
-        // })
-        
-        // sum val of arr2
-        // let val2 = arr2.reduce(function(accumulator, currentValue) {
-        //     return accumulator + currentValue
-        // })
-        
         arr3.push(Math.abs(arr1.reduce(reducer) - arr2.reduce(reducer)))        
-        // arr3.push(Math.abs(val1 - val2))
     }
-
     return Math.min(...arr3)
 }
 
-console.log(solution([3, 1, 2, 4, 3]))
+console.log(solution([3, 1, 2, 4, 3]));
