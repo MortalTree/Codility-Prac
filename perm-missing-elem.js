@@ -58,3 +58,4 @@ let solution = function (A) {
 }
 
 console.log(solution([4, 5, 2, 3, 9, 8, 7, 6]))
+console.log(solution([9, 3, 9, 3, 9, 7, 9]))
