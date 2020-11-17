@@ -52,21 +52,12 @@ let solution = function(A) {
         let arr1 = A.slice(0, P)
         let arr2 = A.slice(P)
         
-        // sum val of arr1
-        // let val1 = arr1.reduce(function(accumulator, currentValue) {
-        //     return accumulator + currentValue
-        // })
-        
-        // sum val of arr2
-        // let val2 = arr2.reduce(function(accumulator, currentValue) {
-        //     return accumulator + currentValue
-        // })
-        
-        arr3.push(Math.abs(arr1.reduce(reducer) - arr2.reduce(reducer)))        
-        // arr3.push(Math.abs(val1 - val2))
+        arr3.push(Math.abs(arr1.reduce(reducer) - arr2.reduce(reducer)))                
     }
 
     return Math.min(...arr3)
 }
 
 console.log(solution([3, 1, 2, 4, 3]))
+
+// 53%

@@ -22,3 +22,5 @@ let solution = function (X, Y, D) {
 
 console.log(solution(1, 100, 3))
 console.log(solution(1, 5, 2))
+
+// 100%

@@ -41,28 +41,8 @@
 // N and X are integers within the range [1..100,000];
 // each element of array A is an integer within the range [1..X].
 
-// function solution(X, A) {
-
-//     let ints = []
-//     for (i = 1; i <= X; i ++) {
-//         ints.push(i)
-//     }
-//     console.log(ints);
-    
-//     for (j = 0; j <= A.length - 1; j ++) {
-//         if (ints.includes(A[j])) {
-//             ints.splice(ints.indexOf(A[j]), 1)     
-            
-//             if (ints.length = 0) {
-//                 return (j + 1)
-//             } 
-//         }
-//     }
-//     return -1    
-// }
 
 function solution(X, A) {
-    A.sort()    
     let maxA = A.length - 1
     console.log(A)
     let jmp = 0
@@ -70,16 +50,12 @@ function solution(X, A) {
     for (k = 1; k <= X; k ++) {                        
         for (j = 0; j <= maxA; j ++) {                   
             if (A.includes(k)) {
-                jmp ++
-                A.splice(A.indexOf(k), 1)
-                // console.log('A' + A);
-                // console.log('K' + k);
-                console.log('Removing ' + k)
-                console.log('A' + A)                
-                console.log(A.length)
-                console.log(jmp + ' jumps');
+                if (j == 0) {
+                    jmp ++
+                }                
+                A.splice(A.indexOf(k), 1)                
                 if (A.length == 0) {
-                    return jmp
+                    return jmp + 1
                 } 
             }            
         }        
@@ -88,3 +64,5 @@ function solution(X, A) {
 }
 
 console.log(solution(5, [1, 3, 1, 4, 2, 3, 5, 4]));
+
+// 9%
